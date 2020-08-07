@@ -6,7 +6,9 @@ https://stackoverflow.com/questions/21434403/save-pdf-file-into-blob-column-orac
 Users Table
 u_id 		number auto_increment,
 password	varchar greater than 8,
-role		varchar(ministry, sno, institute, student
+role		varchar(ministry, sno, institute, student)
+role_id		number
+
 
 
 Student Registration Table
@@ -23,11 +25,17 @@ dob
 bank_ifsc
 bank_account
 bank_name
+uid
+
+
+Family_Details_Table
+uid
 father_name
 mother_name
 family_annual_income
 
-Acedimic Table
+Acedimic_Table
+uid
 Institute_name 		varchar,
 present_course 		varchar,
 present_year 		varchar,
@@ -39,23 +47,27 @@ previous_year
 previous_class_percent
 		
 10th_Table
+uid
 roll_no 
 board_name
 passing_year
 precent_obtained
 
 12th_Table
+uid
 roll_no 
 board_name
 passing_year
 precent_obtained
 
 Fee_details
+uid
 admission_fee
 tution_fee
 other_fee
 
 Other_personal_detail_Table
+uid
 type_of_disability
 percet_of_disability
 marital_status
@@ -85,6 +97,12 @@ aadhar_card
 
 
 Scholarship_Application
+scholarship_id
+Name
+Amount
+Description
+Status
+Level
 
 
 
@@ -92,7 +110,7 @@ Institute registration Table
 state
 district
 name
-code
+institution_code
 dise_code
 university_state
 university_name
@@ -115,6 +133,9 @@ pincode
 principal_name
 mobile_no
 telephone
+
+
+
 
 
 
