@@ -28,6 +28,8 @@ bank_name
 uid
 
 
+STUDENT DETAILS TABLE {
+
 Family_Details_Table
 uid
 father_name
@@ -93,7 +95,8 @@ bank_passbook
 aadhar_card
 10thmarksheet
 12thmarksheet
-
+BonafideCertificate null
+}
 
 
 Scholarship_Application
