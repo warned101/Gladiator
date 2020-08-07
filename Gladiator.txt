@@ -1,0 +1,121 @@
+Storing files in db
+https://community.oracle.com/thread/2400953?tstart=0
+https://stackoverflow.com/questions/21434403/save-pdf-file-into-blob-column-oracle-db-with-insert-statement
+
+
+Users Table
+u_id 		number auto_increment,
+password	varchar greater than 8,
+role		varchar(ministry, sno, institute, student
+
+
+Student Registration Table
+state_domicile		varchar,
+name			varchar,
+gender			varchar,
+mobile			number(10),
+email			varchar,
+institution		number,
+adhar_no		number,
+password 		varchar
+district
+dob
+bank_ifsc
+bank_account
+bank_name
+father_name
+mother_name
+family_annual_income
+
+Acedimic Table
+Institute_name 		varchar,
+present_course 		varchar,
+present_year 		varchar,
+mode_of_study		varchar,
+start_date		v
+university_name
+previous_course
+previous_year
+previous_class_percent
+		
+10th_Table
+roll_no 
+board_name
+passing_year
+precent_obtained
+
+12th_Table
+roll_no 
+board_name
+passing_year
+precent_obtained
+
+Fee_details
+admission_fee
+tution_fee
+other_fee
+
+Other_personal_detail_Table
+type_of_disability
+percet_of_disability
+marital_status
+parents_profession
+
+Contact_details_Table
+state
+district
+block/taluk
+house_no
+street_no
+pincode
+scheme_applying
+
+Document_upload_section
+domicile_certificate
+student_photograph
+institute_id_card
+caste/income_certificate
+previous_year_certificate
+fee_receipt
+bank_passbook
+aadhar_card
+10thmarksheet
+12thmarksheet
+
+
+
+Scholarship_Application
+
+
+
+Institute registration Table
+state
+district
+name
+code
+dise_code
+university_state
+university_name
+password
+institue_establishment_certificate
+university_affilation_certificate
+location
+intitute_type
+affilated_university_state
+institute_category
+year_started
+institute_registration
+affilation_certificate
+address_line1
+address_line2
+city
+state
+district
+pincode
+principal_name
+mobile_no
+telephone
+
+
+
+
