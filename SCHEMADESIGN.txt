@@ -1,0 +1,39 @@
+				PROCESS FLOW
+
+MINISTRY USER 
+
+Login --> View all institutes / ScholarShip Application( GRANT OR DENY).(Amount credit msg.)
+Inst. verification level 2
+Stu. verification level 3
+Scholarship Table
+
+View/Affect --> InstTable -> StudentDetailsTable
+
+NADAL OFFICER USER
+
+login --> View all institutes/bonafide/ ScholarShip Application( GRANT OR DENY) --> forward details of Ins./Student
+Inst. verification level 1
+Stu. verification level 2
+
+view/Affect --> InstTable -> StudentDetailsTable
+
+INSTITUTE PROCESS FLOW
+
+Register/login --> View all student application --> GRANT OR DENY [ BONAFIDE CERTIFICATE upload]
+Stu. verification level 1
+Tables:UserTable,InstTable, StudentDetailsTable
+
+view/effect --> StudentTable nd StudentDetailsTable
+
+
+STUDENT PROCESS FLOW
+
+Registration/login --> View All schemes --> Apply for scholarship --> status of application(mail or sms api)--> Log out
+
+Table : StudentTable, UserTable , StudentDetailsTable
+
+
+
+
+
+
