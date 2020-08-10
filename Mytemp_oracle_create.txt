@@ -1,0 +1,95 @@
+CREATE TABLE "StudentScholarshipTable" (
+	"uid" INT,
+	"Institute_name" VARCHAR2(255) NOT NULL,
+	"present_course" VARCHAR2(255),
+	"present_year" DATE NOT NULL,
+	"mode_of_study" VARCHAR2(255) NOT NULL,
+	"start_date" TIMESTAMP NOT NULL);
+
+CREATE sequence "STUDENTSCHOLARSHIPTABLE_UID_SEQ";
+
+CREATE trigger "BI_STUDENTSCHOLARSHIPTABLE_UID"
+  before insert on "StudentScholarshipTable"
+  for each row
+begin
+  select "STUDENTSCHOLARSHIPTABLE_UID_SEQ".nextval into :NEW."uid" from dual;
+end;
+
+/
+CREATE TABLE "Users" (
+	"u_id" INT,
+	"password" VARCHAR2(40) NOT NULL,
+	"role" VARCHAR2(255) NOT NULL,
+	"role_id" INT NOT NULL,
+	constraint USERS_PK PRIMARY KEY ("u_id"));
+
+CREATE sequence "USERS_U_ID_SEQ";
+
+CREATE trigger "BI_USERS_U_ID"
+  before insert on "Users"
+  for each row
+begin
+  select "USERS_U_ID_SEQ".nextval into :NEW."u_id" from dual;
+end;
+
+/
+CREATE TABLE "StudentRegistrationTable" (
+	"state_domicile" VARCHAR2(255) NOT NULL,
+	"name" VARCHAR2(255) NOT NULL,
+	"gender" VARCHAR2(255) NOT NULL,
+	"mobile" NUMBER(10, 0) NOT NULL,
+	"email" VARCHAR2(255) NOT NULL,
+	"institution" VARCHAR2(255) NOT NULL,
+	"aadhar_no" NUMBER(12, 0) NOT NULL,
+	"district" VARCHAR2(255) NOT NULL,
+	"dob" DATE NOT NULL,
+	"bank_ifsc" VARCHAR2(255) NOT NULL,
+	"bank_account" INT NOT NULL,
+	"bank_name" VARCHAR2(255) NOT NULL,
+	"uid" INT NOT NULL);
+
+
+/
+CREATE TABLE "InstituteRegistrationTable" (
+	"institute_code" INT NOT NULL,
+	"state" VARCHAR2(255) NOT NULL,
+	"district" VARCHAR2(255) NOT NULL,
+	"name" VARCHAR2(255) NOT NULL,
+	"dise_code" INT NOT NULL,
+	"university_state" VARCHAR2(255) NOT NULL,
+	"university_name" VARCHAR2(255) NOT NULL,
+	"institue_establishment_certificate" BLOB NOT NULL,
+	"university_affilation_certificate" BLOB NOT NULL,
+	"institute_category" VARCHAR2(255) NOT NULL,
+	"location" VARCHAR2(255) NOT NULL,
+	"institute_type" VARCHAR2(255) NOT NULL,
+	"affiliated_university_state" VARCHAR2(255) NOT NULL,
+	"affiliated_university_name" VARCHAR2(255) NOT NULL,
+	"admission_start_year" NUMBER(4, 0) NOT NULL,
+	"address" VARCHAR2(255) NOT NULL,
+	"pincode" NUMBER(6, 0) NOT NULL,
+	"principal_name" VARCHAR2(255) NOT NULL,
+	"mobile_number" NUMBER(10, 0) NOT NULL,
+	"telephone_number" NUMBER(10, 0) NOT NULL,
+	"password" VARCHAR2(40) NOT NULL,
+	"u_id" INT NOT NULL,
+	"institute_id" INT NOT NULL,
+	constraint INSTITUTEREGISTRATIONTABLE_PK PRIMARY KEY ("institute_id"));
+
+CREATE sequence "INSTITUTEREGISTRATIONTABLE_INSTITUTE_ID_SEQ";
+
+CREATE trigger "BI_INSTITUTEREGISTRATIONTABLE_INSTITUTE_ID"
+  before insert on "InstituteRegistrationTable"
+  for each row
+begin
+  select "INSTITUTEREGISTRATIONTABLE_INSTITUTE_ID_SEQ".nextval into :NEW."institute_id" from dual;
+end;
+
+/
+ALTER TABLE "StudentScholarshipTable" ADD CONSTRAINT "StudentScholarshipTable_fk0" FOREIGN KEY ("uid") REFERENCES "Users"("u_id");
+
+
+ALTER TABLE "StudentRegistrationTable" ADD CONSTRAINT "StudentRegistrationTable_fk0" FOREIGN KEY ("uid") REFERENCES "Users"("u_id");
+
+ALTER TABLE "InstituteRegistrationTable" ADD CONSTRAINT "InstituteRegistrationTable_fk0" FOREIGN KEY ("u_id") REFERENCES "Users"("u_id");
+
