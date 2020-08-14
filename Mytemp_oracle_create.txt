@@ -93,3 +93,14 @@ ALTER TABLE "StudentRegistrationTable" ADD CONSTRAINT "StudentRegistrationTable_
 
 ALTER TABLE "InstituteRegistrationTable" ADD CONSTRAINT "InstituteRegistrationTable_fk0" FOREIGN KEY ("u_id") REFERENCES "Users"("u_id");
 
+CREATE TABLE "Scholarship" (
+	"scholarship_id" INT,
+	"scholarship_name" VARCHAR2(255) UNIQUE NOT NULL,
+	"scholarship_type" VARCHAR2(255) NOT NULL,
+	"scholarship_amount" FLOAT NOT NULL,
+	constraint SCHOLARSHIP_PK PRIMARY KEY ("scholarship_id"));
+
+CREATE sequence "SCHOLARSHIP_SCHOLARSHIP_ID_SEQ";
+
+
+
